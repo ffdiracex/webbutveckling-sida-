@@ -1,0 +1,136 @@
+// Main JavaScript file for the static website
+
+// DOM elements
+const ctaButton = document.getElementById('ctaButton');
+const demoButton = document.getElementById('demoButton');
+const resetButton = document.getElementById('resetButton');
+const updateTimeButton = document.getElementById('updateTimeButton');
+const clickCountElement = document.getElementById('clickCount');
+const currentTimeElement = document.getElementById('currentTime');
+const currentYearElement = document.getElementById('currentYear');
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+// State
+let clickCount = 0;
+
+// Initialize the page
+function init() {
+    // Set current year in footer
+    currentYearElement.textContent = new Date().getFullYear();
+    
+    // Update time initially
+    updateTime();
+    
+    // Set up event listeners
+    setupEventListeners();
+    
+    console.log('Website initialized successfully!');
+}
+
+// Set up all event listeners
+function setupEventListeners() {
+    // CTA button
+    if (ctaButton) {
+        ctaButton.addEventListener('click', () => {
+            alert('Welcome to our website! Thanks for clicking.');
+        });
+    }
+    
+    // Demo button - increment counter
+    if (demoButton) {
+        demoButton.addEventListener('click', incrementCounter);
+    }
+    
+    // Reset button
+    if (resetButton) {
+        resetButton.addEventListener('click', resetCounter);
+    }
+    
+    // Update time button
+    if (updateTimeButton) {
+        updateTimeButton.addEventListener('click', updateTime);
+    }
+    
+    // Mobile menu toggle
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
+
+// Increment the click counter
+function incrementCounter() {
+    clickCount++;
+    clickCountElement.textContent = clickCount;
+    
+    // Visual feedback
+    demoButton.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        demoButton.style.transform = '';
+    }, 150);
+    
+    // Change color based on count
+    if (clickCount >= 10) {
+        clickCountElement.style.color = '#ff006e';
+    } else if (clickCount >= 5) {
+        clickCountElement.style.color = '#38b000';
+    }
+}
+
+// Reset the counter
+function resetCounter() {
+    clickCount = 0;
+    clickCountElement.textContent = clickCount;
+    clickCountElement.style.color = '#3a86ff';
+    
+    // Visual feedback
+    resetButton.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        resetButton.style.transform = '';
+    }, 150);
+}
+
+// Update the current time display
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    currentTimeElement.textContent = timeString;
+    
+    // Visual feedback
+    updateTimeButton.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        updateTimeButton.style.transform = '';
+    }, 150);
+}
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+    navLinks.classList.toggle('active');
+    
+    // Change button icon
+    if (navLinks.classList.contains('active')) {
+        mobileMenuBtn.textContent = '¿';
+        mobileMenuBtn.setAttribute('aria-label', 'Close mobile menu');
+    } else {
+        mobileMenuBtn.textContent = '¿';
+        mobileMenuBtn.setAttribute('aria-label', 'Toggle mobile menu');
+    }
+}
+
+// Close mobile menu
+function closeMobileMenu() {
+    navLinks.classList.remove('active');
+    mobileMenuBtn.textContent = '¿';
+    mobileMenuBtn.setAttribute('aria-label', 'Toggle mobile menu');
+}
+
+// Initialize the website when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+
+// Export functions for module usage (if needed)
+export { incrementCounter, resetCounter, updateTime };

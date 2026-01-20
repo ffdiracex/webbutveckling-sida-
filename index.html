@@ -1,0 +1,542 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Static Website Demo</h1>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Rör gräs bro</h2>
+            <div class="counter-box">
+                <p>Gräs Count: <span class="counter-display">0</span></p>
+		<button class="counter-btn">Klicka Mig!</button>
+                <button class="reset-btn">Reset</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Live Time Display</h2>
+            <div class="time-box">
+                <p>Dagens tid: <span class="time-display">--:--:--</span></p>
+                <button class="time-btn">Ny tid</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Color Changer</h2>
+            <div class="color-box">
+                <p>Klicka för färgbyte:</p>
+                <div class="color-display" style="width: 100px; height: 100px; background-color: #3a86ff; margin: 10px auto;"></div>
+                <button class="color-btn">BYT</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span class="year-display">2026</span> Felix Engineer</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+-->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions Inc. - Innovative Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-rocket"></i> TechSolutions Inc.</h1>
+            <p class="tagline">Innovative Solutions for Modern Businesses</p>
+        </div>
+    </header>
+
+     Service Carousel Section 
+    <section class="carousel-container">
+        <div class="carousel">
+             
+            <div class="carousel-slide active" data-slide="1">
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Development Service">
+                </div>
+                <div class="slide-content">
+                    <h2><i class="fas fa-code"></i> Custom Web Development</h2>
+                    <p class="slide-subtitle">Build your digital presence with cutting-edge technology</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Responsive design for all devices</li>
+                        <li><i class="fas fa-check-circle"></i> E-commerce solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Content Management Systems</li>
+                        <li><i class="fas fa-check-circle"></i> SEO optimization included</li>
+                    </ul>
+                    <div class="slide-footer">
+                        <span class="price">Starting at $2,499</span>
+                        <button class="cta-btn">Learn More</button>
+                    </div>
+                </div>
+                <div class="slide-badge">Most Popular</div>
+            </div>
+            
+            
+            <div class="carousel-slide" data-slide="2">
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile App Development">
+                </div>
+                <div class="slide-content">
+                    <h2><i class="fas fa-mobile-alt"></i> Mobile App Development</h2>
+                    <p class="slide-subtitle">Reach your customers on iOS and Android platforms</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Native iOS & Android development</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-platform solutions (React Native/Flutter)</li>
+                        <li><i class="fas fa-check-circle"></i> App Store deployment assistance</li>
+                        <li><i class="fas fa-check-circle"></i> Ongoing maintenance & updates</li>
+                    </ul>
+                    <div class="slide-footer">
+                        <span class="price">Starting at $4,999</span>
+                        <button class="cta-btn">View Case Studies</button>
+                    </div>
+                </div>
+                <div class="slide-badge">New</div>
+            </div>
+            
+        
+            <div class="carousel-slide" data-slide="3">
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cloud Solutions">
+                </div>
+                <div class="slide-content">
+                    <h2><i class="fas fa-cloud"></i> Cloud Solutions & DevOps</h2>
+                    <p class="slide-subtitle">Scale your infrastructure with our cloud expertise</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> AWS, Azure & Google Cloud migration</li>
+                        <li><i class="fas fa-check-circle"></i> CI/CD pipeline setup</li>
+                        <li><i class="fas fa-check-circle"></i> Containerization with Docker & Kubernetes</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 monitoring & support</li>
+                    </ul>
+                    <div class="slide-footer">
+                        <span class="price">Custom Pricing</span>
+                        <button class="cta-btn">Get a Free Consultation</button>
+                    </div>
+                </div>
+                <div class="slide-badge">Enterprise</div>
+            </div>
+            
+            
+            <div class="carousel-slide" data-slide="4">
+                <div class="slide-image">
+                    <img src="ppl.jpg" alt="Digital Marketing">
+                </div>
+                <div class="slide-content">
+                    <h2><i class="fas fa-chart-line"></i> Digital Marketing Strategy</h2>
+                    <p class="slide-subtitle">Grow your business with data-driven marketing</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> SEO & SEM campaign management</li>
+                        <li><i class="fas fa-check-circle"></i> Social media marketing</li>
+                        <li><i class="fas fa-check-circle"></i> Conversion rate optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Analytics & performance reporting</li>
+                    </ul>
+                    <div class="slide-footer">
+                        <span class="price">From $999/month</span>
+                        <button class="cta-btn">Book Strategy Session</button>
+                    </div>
+                </div>
+                <div class="slide-badge">Limited Offer</div>
+            </div>
+        </div>
+        
+        
+        <button class="carousel-nav prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-nav next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        
+        <div class="carousel-indicators">
+            <button class="indicator active" data-slide="1" aria-label="Go to slide 1"></button>
+            <button class="indicator" data-slide="2" aria-label="Go to slide 2"></button>
+            <button class="indicator" data-slide="3" aria-label="Go to slide 3"></button>
+            <button class="indicator" data-slide="4" aria-label="Go to slide 4"></button>
+        </div>
+        
+
+        <div class="carousel-controls">
+            <button class="control-btn pause-btn" aria-label="Pause carousel">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="control-btn play-btn active" aria-label="Play carousel">
+                <i class="fas fa-play"></i>
+            </button>
+            <span class="auto-label">Auto-play: </span>
+            <div class="speed-control">
+                <button class="speed-btn slow" data-speed="5000">Slow</button>
+                <button class="speed-btn medium active" data-speed="3000">Medium</button>
+                <button class="speed-btn fast" data-speed="1500">Fast</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="demo-section">
+            <h2><i class="fas fa-chart-bar"></i> Why Choose TechSolutions?</h2>
+            <p>We've helped over 500 businesses transform their digital presence. Here's what our clients say:</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <h3>250+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="demo-section">
+            <h2><i class="fas fa-comments"></i> Get In Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> Call us: 1-800-TECH-SOL</p>
+                <p><i class="fas fa-envelope"></i> Email: contact@techsolutions.com</p>
+                <p><i class="fas fa-clock"></i> Business Hours: Mon-Fri 9AM-6PM EST</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span class="year-display">2024</span> TechSolutions Inc. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webbutveckling 1 projekt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="ppl.jpg" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility & Controls Bar -->
+    <div class="controls-bar">
+        <div class="container">
+            <div class="controls-left">
+                <button id="font-decrease" class="control-btn" title="Minska font size">
+                    <i class="fas fa-font"></i> <i class="fas fa-minus"></i>
+                </button>
+                <button id="font-reset" class="control-btn" title="återställ font size">
+                    <i class="fas fa-font"></i> A
+                </button>
+                <button id="font-increase" class="control-btn" title="Öka font size">
+                    <i class="fas fa-font"></i> <i class="fas fa-plus"></i>
+                </button>
+                <span class="control-separator">|</span>
+                <button id="dark-mode-toggle" class="control-btn" title="fixa dark/light mode">
+                    <i class="fas fa-moon"></i> <span class="mode-text">Dark Mode</span>
+                </button>
+            </div>
+            <div class="controls-right">
+                <button id="print-page" class="control-btn" title="skriv ut">
+                    <i class="fas fa-print"></i>
+                </button>
+                <button id="search-toggle" class="control-btn" title="Sök wiki">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Panel -->
+    <div class="search-panel">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="wiki-search" placeholder="Sök på wiki...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+                <button id="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="wiki-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="wiki-title">
+                    <i class="fas fa-cogs"></i> Webbutveckling 1 proj
+                </h1>
+                <p class="wiki-subtitle">FelixTheMan, a CEO, a Senior Systems Engineer</p>
+                <div class="header-stats">
+                    <span class="stat"><i class="fas fa-book"></i> 999 Articles</span>
+                    <span class="stat"><i class="fas fa-code-branch"></i> 69 Projects</span>
+                    <span class="stat"><i class="fas fa-calendar-alt"></i> Updated: <span id="current-date"></span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Sidebar -->
+    <div class="container main-container">
+        <nav class="wiki-sidebar">
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-circle"></i> Om Felix</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#biography" class="nav-link active"><i class="fas fa-user"></i> Biography</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#expertise" class="nav-link"><i class="fas fa-tools"></i> Areas of Expertise</a></li>
+                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-laptop-code"></i> Technical Domains</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#embedded" class="nav-link"><i class="fas fa-microchip"></i> Embedded Systems</a></li>
+                    <li><a href="#robotics" class="nav-link"><i class="fas fa-robot"></i> Robotics & Automation</a></li>
+                    <li><a href="#iot" class="nav-link"><i class="fas fa-wifi"></i> IoT Systems</a></li>
+                    <li><a href="#renewable" class="nav-link"><i class="fas fa-solar-panel"></i> Renewable Energy</a></li>
+                    <li><a href="#ml" class="nav-link"><i class="fas fa-brain"></i> Machine Learning</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-project-diagram"></i> Notable Projects</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#mars-rover" class="nav-link"><i class="fas fa-space-shuttle"></i> Mars Rover Prototype</a></li>
+                    <li><a href="#smart-grid" class="nav-link"><i class="fas fa-bolt"></i> Smart Grid Controller</a></li>
+                    <li><a href="#autonomous-drone" class="nav-link"><i class="fas fa-helicopter"></i> Autonomous Drone</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-file-alt"></i> Quick Links</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#publications" class="nav-link"><i class="fas fa-file-pdf"></i> Publications</a></li>
+                    <li><a href="#tools" class="nav-link"><i class="fas fa-wrench"></i> Tool Recommendations</a></li>
+                    <li><a href="#resources" class="nav-link"><i class="fas fa-link"></i> Resources</a></li>
+                    <li><button id="random-article" class="nav-link random-btn"><i class="fas fa-random"></i> Random Article</button></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="theme-indicator">
+                    <i class="fas fa-palette"></i> Theme: <span id="theme-status">Light</span>
+                </div>
+                <div class="font-size-indicator">
+                    <i class="fas fa-text-height"></i> Font: <span id="font-size-status">100%</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs">
+                <a href="#"><i class="fas fa-home"></i> Home</a> / <span id="current-section">Biography</span>
+            </nav>
+
+            <!-- Article Content -->
+            <article id="biography" class="wiki-article active-section">
+                <div class="article-header">
+                    <h1><i class="fas fa-user"></i> Kungen: Biography</h1>
+                    <div class="article-meta">
+                        <span class="meta-item"><i class="fas fa-clock"></i> Last updated: 69 days ago</span>
+                        <span class="meta-item"><i class="fas fa-eye"></i> 999 views</span>
+                        <button class="edit-btn"><i class="fas fa-edit"></i> ändra</button>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <div class="profile-summary">
+                        <div class="profile-image">
+                            <div class="image-placeholder">
+				    <img src="ppl.jpg" alt=""/>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h2>Felix Engineer, WorldTech CEO</h2>
+                            <p class="profile-title">Senior Systems Engineer and CEO</p>
+                            <div class="profile-tags">
+                                <span class="tag"><i class="fas fa-map-marker-alt"></i> LA, California</span>
+                                <span class="tag"><i class="fas fa-briefcase"></i> 67+ years experience</span>
+                                <span class="tag"><i class="fas fa-star"></i> 69 patents filed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Career Overview</h2>
+                    <p>Felix är en ambitiös arbetare som började koda med python, ökade sin kunskap genom andra språk
+		    och OS än windows, Felix har byggt ett flertal API's som används av världens största företag, 
+		    såsom Amazon, eBAY etc.</p>
+                    
+                    <div class="info-box">
+                        <h3><i class="fas fa-lightbulb"></i> Engineering</h3>
+                        <p>Good artists copy, great arists steal - Steve Jobs</p>
+                    </div>
+
+                    <h2>Resa hit </h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1980-2000</div>
+                            <div class="timeline-content">
+                                <h3>Junior Embedded Engineer</h3>
+                                <p>worldCEO embedded devices</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000-2001</div>
+                            <div class="timeline-content">
+                                <h3>Robotics Engineer</h3>
+                                <p>ROBOT inc. </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2001-2026</div>
+                            <div class="timeline-content">
+                                <h3>Senior Systems Engineer & CEO</h3>
+                                <p>worldCEO TECH </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Skills killen har</h2>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span class="skill-name">Embedded C/C++, helloworld("print")</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PCB Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python/Robotics</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percent">92%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Systems Architecture</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-footer">
+                    <div class="tags">
+                        <span class="tag-label"><i class="fas fa-tags"></i> Tags:</span>
+                        <a href="#" class="tag">engineering</a>
+                        <a href="#" class="tag">biography</a>
+                        <a href="#" class="tag">career</a>
+                        <a href="#" class="tag">systems-engineering</a>
+                    </div>
+                    <div class="article-actions">
+                        <button class="action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                        <button class="action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                        <button class="action-btn"><i class="fas fa-flag"></i> Report</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- More article sections would go here -->
+            <div class="placeholder-section">
+                <h2><i class="fas fa-info-circle"></i> Navigate using the sidebar to explore more content</h2>
+                <p>This wiki contains detailed information about Felix's engineering projects, research, and technical expertise.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="wiki-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-sitemap"></i> Wiki Nav</h3>
+                    <p>Explore Felix's engineering knowledge base, project archives, and technical resources.</p>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-history"></i> Updateringar</h3>
+                    <ul class="updates-list">
+                        <li>Smart Grid Controller documentation updated</li>
+                        <li>Added new IoT protocols guide</li>
+                        <li>Updated Python robotics libraries</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-cog"></i> Wiki Status</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="article-count">128</div>
+                            <div class="stat-label">Articles</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="image-count">347</div>
+                            <div class="stat-label">Diagrams</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="contributor-count">1</div>
+                            <div class="stat-label">Contributor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Felix's Engineering Wiki och portfolio. Detta är för webbutveckling 1 :) </p>
+                <p class="footer-note"><i class="fas fa-exclamation-triangle"></i> hej </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

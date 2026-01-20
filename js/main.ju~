@@ -1,0 +1,459 @@
+
+// Pure native JavaScript - no element ID dependencies
+
+// Run when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM ready - starting native JS implementation');
+    
+    // Create a simple state object
+    const appState = {
+        counter: 0,
+        colors: ['#3a86ff', '#ff006e', '#38b000', '#8338ec', '#ff9e00', '#ff5400'],
+        currentColorIndex: 0
+    };
+    
+    // 1. Set current year in footer
+    updateYear();
+    
+    // 2. Start live time updates
+    startLiveTime();
+    
+    // 3. Set up all event listeners using event delegation
+    setupEventDelegation();
+    
+    // 4. Initial render
+    console.log('App initialized successfully');
+});
+
+// Function to update current year
+function updateYear() {
+    // Find all elements with class 'year-display'
+    const yearElements = document.querySelectorAll('.year-display');
+    const currentYear = new Date().getFullYear();
+    
+    yearElements.forEach(element => {
+        element.textContent = currentYear;
+    });
+    console.log('Year updated to:', currentYear);
+}
+
+// Function to update time
+function updateTime() {
+    // Find all elements with class 'time-display'
+    const timeElements = document.querySelectorAll('.time-display');
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    
+    timeElements.forEach(element => {
+        element.textContent = timeString;
+        // Add a visual pulse effect
+        element.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 200);
+    });
+}
+
+// Start live time updates every second
+function startLiveTime() {
+    updateTime(); // Update immediately
+    setInterval(updateTime, 1000);
+}
+
+// Handle counter increment
+function incrementCounter() {
+    // Find all elements with class 'counter-display'
+    const counterElements = document.querySelectorAll('.counter-display');
+    
+    // Get counter value from the first element (assuming only one)
+    if (counterElements.length > 0) {
+        const currentElement = counterElements[0];
+        let currentValue = parseInt(currentElement.textContent) || 0;
+        currentValue++;
+        
+        // Update all counter displays
+        counterElements.forEach(element => {
+            element.textContent = currentValue;
+            
+            // Color logic based on count
+            if (currentValue >= 10) {
+                element.style.color = '#ff006e';
+            } else if (currentValue >= 5) {
+                element.style.color = '#38b000';
+            } else {
+                element.style.color = '#3a86ff';
+            }
+            
+            // Add animation
+            element.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        console.log('Counter incremented to:', currentValue);
+    }
+}
+
+// Handle counter reset
+function resetCounter() {
+    // Find all elements with class 'counter-display'
+    const counterElements = document.querySelectorAll('.counter-display');
+    
+    counterElements.forEach(element => {
+        element.textContent = '0';
+        element.style.color = '#3a86ff';
+        
+        // Add reset animation
+        element.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 200);
+    });
+    
+    console.log('Counter reset to 0');
+}
+
+// Handle color change
+function changeColor() {
+    // Find all elements with class 'color-display'
+    const colorElements = document.querySelectorAll('.color-display');
+    
+    // Cycle through colors
+    const colors = ['#3a86ff', '#ff006e', '#38b000', '#8338ec', '#ff9e00', '#ff5400'];
+    const currentElement = colorElements[0];
+    
+    if (currentElement) {
+        // Get current background color
+        const currentColor = currentElement.style.backgroundColor || 'rgb(58, 134, 255)';
+        
+        // Convert RGB to hex if needed
+        let colorIndex = colors.findIndex(color => 
+            color === currentColor || 
+            color === rgbToHex(currentColor)
+        );
+        
+        // Get next color index
+        colorIndex = (colorIndex + 1) % colors.length;
+        
+        // Update all color displays
+        colorElements.forEach(element => {
+            element.style.backgroundColor = colors[colorIndex];
+            
+            // Add animation
+            element.style.transform = 'rotate(10deg)';
+            setTimeout(() => {
+                element.style.transform = 'rotate(0deg)';
+            }, 200);
+        });
+        
+        console.log('Color changed to:', colors[colorIndex]);
+    }
+}
+
+// Helper function to convert RGB to hex
+function rgbToHex(rgb) {
+    // If it's already hex, return it
+    if (rgb.startsWith('#')) return rgb;
+    
+    // Extract RGB values
+    const match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+    if (!match) return '#3a86ff';
+    
+    const r = parseInt(match[1]);
+    const g = parseInt(match[2]);
+    const b = parseInt(match[3]);
+    
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// Event delegation setup - ONE event listener for ALL buttons
+function setupEventDelegation() {
+    // Add single event listener to document body
+    document.body.addEventListener('click', function(event) {
+        const clickedElement = event.target;
+        
+        // Check which button was clicked by its class
+        if (clickedElement.classList.contains('counter-btn')) {
+            incrementCounter();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('reset-btn')) {
+            resetCounter();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('time-btn')) {
+            // Manual time update
+            updateTime();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('color-btn')) {
+            changeColor();
+            addClickEffect(clickedElement);
+        }
+    });
+    
+    console.log('Event delegation set up successfully');
+}
+
+// Add visual feedback for button clicks
+function addClickEffect(button) {
+    button.style.transform = 'scale(0.95)';
+    button.style.opacity = '0.8';
+    
+    setTimeout(() => {
+        button.style.transform = '';
+        button.style.opacity = '';
+    }, 150);
+}
+
+// Add some visual effects when page loads
+window.addEventListener('load', function() {
+    console.log('Page fully loaded');
+    
+    // Add fade-in animation to all sections
+    const sections = document.querySelectorAll('.demo-section');
+    sections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            section.style.transition = 'all 0.5s ease';
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }, 100 * index);
+    });
+    
+    // Welcome message in console
+    console.log('%c¿ Website Ready! ¿', 'color: #3a86ff; font-size: 16px; font-weight: bold;');
+    console.log('%cAll JavaScript features are now active.', 'color: #38b000;');
+});
+// Pure native JavaScript - no element ID dependencies
+
+// Run when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM ready - starting native JS implementation');
+    
+    // Create a simple state object
+    const appState = {
+        counter: 0,
+        colors: ['#3a86ff', '#ff006e', '#38b000', '#8338ec', '#ff9e00', '#ff5400'],
+        currentColorIndex: 0
+    };
+    
+    // 1. Set current year in footer
+    updateYear();
+    
+    // 2. Start live time updates
+    startLiveTime();
+    
+    // 3. Set up all event listeners using event delegation
+    setupEventDelegation();
+    
+    // 4. Initial render
+    console.log('App initialized successfully');
+});
+
+// Function to update current year
+function updateYear() {
+    // Find all elements with class 'year-display'
+    const yearElements = document.querySelectorAll('.year-display');
+    const currentYear = new Date().getFullYear();
+    
+    yearElements.forEach(element => {
+        element.textContent = currentYear;
+    });
+    console.log('Year updated to:', currentYear);
+}
+
+// Function to update time
+function updateTime() {
+    // Find all elements with class 'time-display'
+    const timeElements = document.querySelectorAll('.time-display');
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    
+    timeElements.forEach(element => {
+        element.textContent = timeString;
+        // Add a visual pulse effect
+        element.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 200);
+    });
+}
+
+// Start live time updates every second
+function startLiveTime() {
+    updateTime(); // Update immediately
+    setInterval(updateTime, 1000);
+}
+
+// Handle counter increment
+function incrementCounter() {
+    // Find all elements with class 'counter-display'
+    const counterElements = document.querySelectorAll('.counter-display');
+    
+    // Get counter value from the first element (assuming only one)
+    if (counterElements.length > 0) {
+        const currentElement = counterElements[0];
+        let currentValue = parseInt(currentElement.textContent) || 0;
+        currentValue++;
+        
+        // Update all counter displays
+        counterElements.forEach(element => {
+            element.textContent = currentValue;
+            
+            // Color logic based on count
+            if (currentValue >= 10) {
+                element.style.color = '#ff006e';
+            } else if (currentValue >= 5) {
+                element.style.color = '#38b000';
+            } else {
+                element.style.color = '#3a86ff';
+            }
+            
+            // Add animation
+            element.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        console.log('Counter incremented to:', currentValue);
+    }
+}
+
+// Handle counter reset
+function resetCounter() {
+    // Find all elements with class 'counter-display'
+    const counterElements = document.querySelectorAll('.counter-display');
+    
+    counterElements.forEach(element => {
+        element.textContent = '0';
+        element.style.color = '#3a86ff';
+        
+        // Add reset animation
+        element.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 200);
+    });
+    
+    console.log('Counter reset to 0');
+}
+
+// Handle color change
+function changeColor() {
+    // Find all elements with class 'color-display'
+    const colorElements = document.querySelectorAll('.color-display');
+    
+    // Cycle through colors
+    const colors = ['#3a86ff', '#ff006e', '#38b000', '#8338ec', '#ff9e00', '#ff5400'];
+    const currentElement = colorElements[0];
+    
+    if (currentElement) {
+        // Get current background color
+        const currentColor = currentElement.style.backgroundColor || 'rgb(58, 134, 255)';
+        
+        // Convert RGB to hex if needed
+        let colorIndex = colors.findIndex(color => 
+            color === currentColor || 
+            color === rgbToHex(currentColor)
+        );
+        
+        // Get next color index
+        colorIndex = (colorIndex + 1) % colors.length;
+        
+        // Update all color displays
+        colorElements.forEach(element => {
+            element.style.backgroundColor = colors[colorIndex];
+            
+            // Add animation
+            element.style.transform = 'rotate(10deg)';
+            setTimeout(() => {
+                element.style.transform = 'rotate(0deg)';
+            }, 200);
+        });
+        
+        console.log('Color changed to:', colors[colorIndex]);
+    }
+}
+
+// Helper function to convert RGB to hex
+function rgbToHex(rgb) {
+    // If it's already hex, return it
+    if (rgb.startsWith('#')) return rgb;
+    
+    // Extract RGB values
+    const match = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+    if (!match) return '#3a86ff';
+    
+    const r = parseInt(match[1]);
+    const g = parseInt(match[2]);
+    const b = parseInt(match[3]);
+    
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// Event delegation setup - ONE event listener for ALL buttons
+function setupEventDelegation() {
+    // Add single event listener to document body
+    document.body.addEventListener('click', function(event) {
+        const clickedElement = event.target;
+        
+        // Check which button was clicked by its class
+        if (clickedElement.classList.contains('counter-btn')) {
+            incrementCounter();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('reset-btn')) {
+            resetCounter();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('time-btn')) {
+            // Manual time update
+            updateTime();
+            addClickEffect(clickedElement);
+        }
+        else if (clickedElement.classList.contains('color-btn')) {
+            changeColor();
+            addClickEffect(clickedElement);
+        }
+    });
+    
+    console.log('Event delegation set up successfully');
+}
+
+// Add visual feedback for button clicks
+function addClickEffect(button) {
+    button.style.transform = 'scale(0.95)';
+    button.style.opacity = '0.8';
+    
+    setTimeout(() => {
+        button.style.transform = '';
+        button.style.opacity = '';
+    }, 150);
+}
+
+// Add some visual effects when page loads
+window.addEventListener('load', function() {
+    console.log('Page fully loaded');
+    
+    // Add fade-in animation to all sections
+    const sections = document.querySelectorAll('.demo-section');
+    sections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            section.style.transition = 'all 0.5s ease';
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }, 100 * index);
+    });
+    
+    // Welcome message in console
+    console.log('%c¿ Website Ready! ¿', 'color: #3a86ff; font-size: 16px; font-weight: bold;');
+    console.log('%cAll JavaScript features are now active.', 'color: #38b000;');
+});
