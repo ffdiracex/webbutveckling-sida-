@@ -269,16 +269,7 @@ body {
     border-left: 3px solid transparent;
 }
 
-.nav-link:hover {
-    background: var(--bg-tertiary);
-    border-left-color: var(--primary-color);
-}
 
-.nav-link.active {
-    background: var(--primary-color);
-    color: white;
-    border-left-color: var(--accent-color);
-}
 
 .random-btn {
     width: 100%;
