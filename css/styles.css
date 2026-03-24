@@ -304,23 +304,7 @@ body {
     border: 1px solid var(--border-color);
 }
 
-.breadcrumbs {
-    background: var(--bg-tertiary);
-    padding: 12px 20px;
-    border-radius: var(--radius);
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
 
-.breadcrumbs a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.breadcrumbs a:hover {
-    text-decoration: underline;
-}
 
 /* Article Styles */
 .wiki-article {
