@@ -14,25 +14,25 @@
         <div class="container">
             <div class="controls-left">
                 <button id="font-decrease" class="control-btn" title="Minska font size">
-                    <i class="fas fa-font"></i> <i class="fas fa-minus"></i>
+                    -
                 </button>
                 <button id="font-reset" class="control-btn" title="återställ font size">
-                    <i class="fas fa-font"></i> A
+                    back
                 </button>
                 <button id="font-increase" class="control-btn" title="Öka font size">
-                    <i class="fas fa-font"></i> <i class="fas fa-plus"></i>
+                    +
                 </button>
                 <span class="control-separator">|</span>
-                <button id="dark-mode-toggle" class="control-btn" title="fixa dark/light mode">
-                    <i class="fas fa-moon"></i> <span class="mode-text">Dark Mode</span>
+                <button id="dark-mode-toggle" class="control-btn" title="dark/light mode">
+                    <span class="mode-text">Dark Mode</span>
                 </button>
             </div>
             <div class="controls-right">
                 <button id="print-page" class="control-btn" title="skriv ut">
-                    <i class="fas fa-print"></i>
+                    Skriv ut
                 </button>
                 <button id="search-toggle" class="control-btn" title="Sök wiki">
-                    <i class="fas fa-search"></i>
+                    Sök
                 </button>
             </div>
         </div>
@@ -43,8 +43,6 @@
         <div class="container">
             <div class="search-box">
                 <input type="text" id="wiki-search" placeholder="Sök på wiki...">
-                <button id="search-btn"><i class="fas fa-search"></i></button>
-                <button id="close-search"><i class="fas fa-times"></i></button>
             </div>
             <div class="search-results" id="search-results"></div>
         </div>
@@ -55,13 +53,13 @@
         <div class="container">
             <div class="header-content">
                 <h1 class="wiki-title">
-                    <i class="fas fa-cogs"></i> Webbutveckling 1 proj
+                    Webbutveckling 1 proj
                 </h1>
                 <p class="wiki-subtitle">FelixTheMan, a CEO, a Senior Systems Engineer</p>
                 <div class="header-stats">
-                    <span class="stat"><i class="fas fa-book"></i> 999 Articles</span>
-                    <span class="stat"><i class="fas fa-code-branch"></i> 69 Projects</span>
-                    <span class="stat"><i class="fas fa-calendar-alt"></i> Updated: <span id="current-date"></span></span>
+                    <span class="stat"> 999 Articles</span>
+                    <span class="stat"> 69 Projects</span>
+                    <span class="stat"> Updated: <span id="current-date"></span></span>
                 </div>
             </div>
         </div>
@@ -73,49 +71,49 @@
             <div class="sidebar-section">
                 <h3><i class="fas fa-user-circle"></i> Om Felix</h3>
                 <ul class="sidebar-nav">
-                    <li><a href="#biography" class="nav-link active"><i class="fas fa-user"></i> Biography</a></li>
-                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                    <li><a href="#expertise" class="nav-link"><i class="fas fa-tools"></i> Areas of Expertise</a></li>
-                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+                    <li><a href="#biography" class="nav-link active"> Biography</a></li>
+                    <li><a href="#education" class="nav-link"> Education</a></li>
+                    <li><a href="#expertise" class="nav-link"> Areas of Expertise</a></li>
+                    <li><a href="#certifications" class="nav-link"> Certifications</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h3><i class="fas fa-laptop-code"></i> Technical Domains</h3>
                 <ul class="sidebar-nav">
-                    <li><a href="#embedded" class="nav-link"><i class="fas fa-microchip"></i> Embedded Systems</a></li>
-                    <li><a href="#robotics" class="nav-link"><i class="fas fa-robot"></i> Robotics & Automation</a></li>
-                    <li><a href="#iot" class="nav-link"><i class="fas fa-wifi"></i> IoT Systems</a></li>
-                    <li><a href="#renewable" class="nav-link"><i class="fas fa-solar-panel"></i> Renewable Energy</a></li>
-                    <li><a href="#ml" class="nav-link"><i class="fas fa-brain"></i> Machine Learning</a></li>
+                    <li><a href="#embedded" class="nav-link"> Embedded Systems</a></li>
+                    <li><a href="#robotics" class="nav-link"> Robotics & Automation</a></li>
+                    <li><a href="#iot" class="nav-link"> IoT Systems</a></li>
+                    <li><a href="#renewable" class="nav-link"> Renewable Energy</a></li>
+                    <li><a href="#ml" class="nav-link"> Machine Learning</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h3><i class="fas fa-project-diagram"></i> Notable Projects</h3>
                 <ul class="sidebar-nav">
-                    <li><a href="#mars-rover" class="nav-link"><i class="fas fa-space-shuttle"></i> Mars Rover Prototype</a></li>
-                    <li><a href="#smart-grid" class="nav-link"><i class="fas fa-bolt"></i> Smart Grid Controller</a></li>
-                    <li><a href="#autonomous-drone" class="nav-link"><i class="fas fa-helicopter"></i> Autonomous Drone</a></li>
+                    <li><a href="#mars-rover" class="nav-link"> Mars Rover Prototype</a></li>
+                    <li><a href="#smart-grid" class="nav-link"> Smart Grid Controller</a></li>
+                    <li><a href="#autonomous-drone" class="nav-link"> Autonomous Drone</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h3><i class="fas fa-file-alt"></i> Quick Links</h3>
                 <ul class="sidebar-nav">
-                    <li><a href="#publications" class="nav-link"><i class="fas fa-file-pdf"></i> Publications</a></li>
-                    <li><a href="#tools" class="nav-link"><i class="fas fa-wrench"></i> Tool Recommendations</a></li>
-                    <li><a href="#resources" class="nav-link"><i class="fas fa-link"></i> Resources</a></li>
-                    <li><button id="random-article" class="nav-link random-btn"><i class="fas fa-random"></i> Random Article</button></li>
+                    <li><a href="#publications" class="nav-link"> Publications</a></li>
+                    <li><a href="#tools" class="nav-link"> Tool Recommendations</a></li>
+                    <li><a href="#resources" class="nav-link"> Resources</a></li>
+                    <li><button id="random-article" class="nav-link random-btn"> Random Article</button></li>
                 </ul>
             </div>
 
             <div class="sidebar-footer">
                 <div class="theme-indicator">
-                    <i class="fas fa-palette"></i> Theme: <span id="theme-status">Light</span>
+                     Theme: <span id="theme-status">Light</span>
                 </div>
                 <div class="font-size-indicator">
-                    <i class="fas fa-text-height"></i> Font: <span id="font-size-status">100%</span>
+                     Font: <span id="font-size-status">100%</span>
                 </div>
             </div>
         </nav>
@@ -124,17 +122,17 @@
         <main class="wiki-content">
             <!-- Breadcrumbs -->
             <nav class="breadcrumbs">
-                <a href="#"><i class="fas fa-home"></i> Home</a> / <span id="current-section">Biography</span>
+                <a href="#"> Home</a> / <span id="current-section">Biography</span>
             </nav>
 
             <!-- Article Content -->
             <article id="biography" class="wiki-article active-section">
                 <div class="article-header">
-                    <h1><i class="fas fa-user"></i> Kungen: Biography</h1>
+                    <h1> Kungen: Biography</h1>
                     <div class="article-meta">
-                        <span class="meta-item"><i class="fas fa-clock"></i> Last updated: 69 days ago</span>
-                        <span class="meta-item"><i class="fas fa-eye"></i> 999 views</span>
-                        <button class="edit-btn"><i class="fas fa-edit"></i> ändra</button>
+                        <span class="meta-item"> Last updated: 69 days ago</span>
+                        <span class="meta-item"> 999 views</span>
+                        <button class="edit-btn"> ändra</button>
                     </div>
                 </div>
 
@@ -149,9 +147,9 @@
                             <h2>Felix Engineer, WorldTech CEO</h2>
                             <p class="profile-title">Senior Systems Engineer and CEO</p>
                             <div class="profile-tags">
-                                <span class="tag"><i class="fas fa-map-marker-alt"></i> LA, California</span>
-                                <span class="tag"><i class="fas fa-briefcase"></i> 67+ years experience</span>
-                                <span class="tag"><i class="fas fa-star"></i> 69 patents filed</span>
+                                <span class="tag"> LA, California</span>
+                                <span class="tag"> 67+ years experience</span>
+                                <span class="tag"> 69 patents filed</span>
                             </div>
                         </div>
                     </div>
@@ -162,7 +160,7 @@
 		    såsom Amazon, eBAY etc.</p>
                     
                     <div class="info-box">
-                        <h3><i class="fas fa-lightbulb"></i> Engineering</h3>
+                        <h3> Engineering</h3>
                         <p>Good artists copy, great arists steal - Steve Jobs</p>
                     </div>
 
@@ -253,11 +251,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-sitemap"></i> Wiki Nav</h3>
+                    <h3> Wiki Nav</h3>
                     <p>Explore Felix's engineering knowledge base, project archives, and technical resources.</p>
                 </div>
                 <div class="footer-section">
-                    <h3><i class="fas fa-history"></i> Updateringar</h3>
+                    <h3> Updateringar</h3>
                     <ul class="updates-list">
                         <li>Smart Grid Controller documentation updated</li>
                         <li>Added new IoT protocols guide</li>
@@ -265,7 +263,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3><i class="fas fa-cog"></i> Wiki Status</h3>
+                    <h3> Wiki Status</h3>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number" id="article-count">128</div>
@@ -291,7 +289,6 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- JavaScript -->
